@@ -13,7 +13,9 @@ A powerful and user-friendly document creation app built with Next.js, featuring
 - **ORM**: Prisma ORM is used to interact with the database, ensuring seamless and efficient data management.
 - **Responsive Design**: Styled with Tailwind CSS and ShadCN UI to provide a clean, modern, and responsive user experience.
 
-Project video : 
+## Project Video
+
+[Watch the AI-Assisted Document Creator Demo](https://drive.google.com/file/d/1aq6khjo7w7nyIuWLbkQAOGvaILtiMCrt/view?usp=sharing)
 
 ## Tech Stack
 
@@ -28,4 +30,4 @@ Project video :
 
 - Node.js 14.x or newer
 - PostgreSQL database (you can use Neon DB)
-- Environment variables for API keys (Clerk, ai, etc.)
+- Environment variables for API keys (Clerk, AI, etc.)
