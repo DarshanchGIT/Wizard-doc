@@ -1,39 +1,31 @@
-![Thumbnail Studio DEV (10)](https://github.com/oliver-gomes/quill-wizards-ai/assets/32399333/be69a15a-f658-4410-9d23-f099cb6ccedf)
+# AI-Assisted Document Creator
 
-In this tutorial, you will learn how to create  full stack Google Doc clone, with AI features to help you suggest storylines, plot twist and even resume ideas while covering all CRUD operations such as adding, editing, deleting docs, authentication, data manipulation using Next.js, TypeScript,  React, Clerk, Google Sign in, Prisma,  Neon, ShadCN UI, React Hook forms, Zod, OpenAI, TailwindCSS and more.
+A powerful and user-friendly document creation app built with Next.js, featuring AI-enhanced capabilities for generating content, creating documents from templates, and managing your documents efficiently. This project also integrates modern design practices and secure authentication.
 
-## Getting Started
+## Features
 
-First, run the development server:
+- **Create Documents**: Effortlessly create new documents from scratch or by using predefined templates.
+- **AI Integration**: Leverage AI to assist in generating content and enhancing your document creation process.
+- **Document Management**: Save, edit, and manage your documents securely.
+- **Template System**: Use customizable templates for a streamlined document creation experience.
+- **Authentication**: Secure authentication via Clerk, ensuring user privacy and document safety.
+- **Database**: Data is stored in a scalable PostgreSQL database, managed via Neon DB.
+- **ORM**: Prisma ORM is used to interact with the database, ensuring seamless and efficient data management.
+- **Responsive Design**: Styled with Tailwind CSS and ShadCN UI to provide a clean, modern, and responsive user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Project video : 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: [Next.js](https://nextjs.org) for the core framework
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) and [ShadCN UI](https://shadcn.dev) for modern and responsive design
+- **AI Integration**: [OpenAI](https://openai.com) or other APIs for AI-enhanced document creation
+- **Authentication**: [Clerk](https://clerk.dev) for secure user authentication
+- **Database**: [Neon DB](https://neon.tech) for scalable PostgreSQL hosting
+- **ORM**: [Prisma](https://www.prisma.io) for database schema management and interaction
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Prerequisites
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# quill-wizards-ai
+- Node.js 14.x or newer
+- PostgreSQL database (you can use Neon DB)
+- Environment variables for API keys (Clerk, ai, etc.)
