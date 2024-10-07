@@ -57,7 +57,7 @@ const DrawerAI = ({ description }: DrawerProps) => {
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>
-              🧙‍♂️ Oyyy! Wizard here! I'm helping you with your wizarly
+              🧙‍♂️ Oyyy! Wizard here! I&apos;m helping you with your wizarly
               storytelling or resume writing 🪄✨Apereciiiuuummm✨?
             </DrawerTitle>
             {isLoading ? (
