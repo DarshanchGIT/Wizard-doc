@@ -1,4 +1,4 @@
-# AI-Assisted Document Creator
+# Wizard-Doc
 
 A powerful and user-friendly document creation app built with Next.js, featuring AI-enhanced capabilities for generating content, creating documents from templates, and managing your documents efficiently. This project also integrates modern design practices and secure authentication.
 
