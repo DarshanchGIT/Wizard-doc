@@ -29,7 +29,6 @@ export async function generateText(description: string): Promise<string> {
     // Check if the response has the expected structure
     if (response && response.generated_text) {
       const cleanText = stripHtmlTags(response.generated_text); // Strip HTML tags
-      console.log(cleanText); // Log the cleaned text
       return cleanText; // Return the cleaned text
     } else {
       throw new Error(

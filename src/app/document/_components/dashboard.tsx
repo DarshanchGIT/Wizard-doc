@@ -13,24 +13,30 @@ export const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div className="space-y-8 max-w-6xl mx-auto">
       {/* New Document */}
-      <Suspense
-        fallback={
-          <Loader className="flex justify-center animate-spin"></Loader>
-        }
-      >
-        <NewDocument />
-      </Suspense>
+      <div className="rounded-lg border-4 border-gray-300 p-6 shadow-lg backdrop-blur-lg">
+        <h2 className="text-3xl font-semibold mb-4 text-gray-700">
+          New Document
+        </h2>
+        <Suspense
+          fallback={<Loader className="flex justify-center animate-spin" />}
+        >
+          <NewDocument />
+        </Suspense>
+      </div>
 
       {/* Recent Document */}
-      <Suspense
-        fallback={
-          <Loader className="flex justify-center animate-spin"></Loader>
-        }
-      >
-        <RecentDocument />
-      </Suspense>
+      <div className="rounded-lg border-4 border-gray-300 p-6 shadow-md">
+        <h2 className="text-3xl font-semibold mb-4 text-gray-700">
+          Recent Document
+        </h2>
+        <Suspense
+          fallback={<Loader className="flex justify-center animate-spin" />}
+        >
+          <RecentDocument />
+        </Suspense>
+      </div>
     </div>
   );
 };

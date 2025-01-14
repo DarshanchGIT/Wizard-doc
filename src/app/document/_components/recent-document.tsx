@@ -29,7 +29,6 @@ const RecentDocument = async () => {
 
   return (
     <div className="w-10/12 mx-auto my-4">
-      <h1 className="font-semibold text-sm mb-4">Recent Document</h1>
       <div className="flex gap-8 flex-wrap">
         {userDocuments.length > 0 ? (
           userDocuments.map((document) => (

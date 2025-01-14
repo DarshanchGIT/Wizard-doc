@@ -10,11 +10,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Loader } from "lucide-react";
-import { generateText } from "@/utils/hugging-face"; // Import the Hugging Face function
+import { Loader, Copy } from "lucide-react";
+import { generateTextGemini } from "@/utils/gemini";
 
 interface DrawerProps {
-  description: string | null; // Prop for description
+  description: string | null;
 }
 
 const DrawerAI = ({ description }: DrawerProps) => {
@@ -25,23 +25,27 @@ const DrawerAI = ({ description }: DrawerProps) => {
   const handleWizardSuggestion = async () => {
     if (!description) {
       console.error("Description is required for text generation.");
-      return; // Early exit if description is null or empty
+      return;
     }
-
-    console.log(
-      "Using Hugging Face API Key:",
-      process.env.NEXT_PUBLIC_HUGGINGFACE_API_KEY
-    );
-
     setIsLoading(true);
     try {
-      const response = await generateText(description!); // Call the Hugging Face function
-      setWizardSuggestion(response);
+      const darshan = await generateTextGemini(description);
+      setWizardSuggestion(darshan);
     } catch (error) {
       console.error("Error generating text:", error);
-      setWizardSuggestion("Failed to generate text. Please try again."); // Provide feedback to the user
+      setWizardSuggestion("Failed to generate text. Please try again.");
     } finally {
-      setIsLoading(false); // Ensure loading state is reset regardless of success or failure
+      setIsLoading(false);
+    }
+  };
+
+  const handleCopyToClipboard = () => {
+    if (wizardSuggestion) {
+      navigator.clipboard.writeText(wizardSuggestion);
+      alert("Copied to clipboard!");
+      setOpen(false); // Close the drawer
+    } else {
+      alert("Nothing to copy!");
     }
   };
 
@@ -55,20 +59,45 @@ const DrawerAI = ({ description }: DrawerProps) => {
           Ask Your Wizard 🧙‍♂️
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>
-              🧙‍♂️ Oyyy! Wizard here! I&apos;m helping you with your wizarly
-              storytelling or resume writing 🪄✨Apereciiiuuummm✨?
-            </DrawerTitle>
-            {isLoading ? (
-              <Loader className="flex mx-auto justify-center animate-spin" />
-            ) : (
-              <DrawerDescription className="whitespace-pre-wrap">
-                {wizardSuggestion && <p>{wizardSuggestion}</p>}
-              </DrawerDescription>
-            )}
+          <DrawerHeader className="flex justify-between items-center">
+            <div>
+              <DrawerTitle>
+                🧙‍♂️ Your Wizard is here to help with storytelling or resume
+                writing! 🪄✨
+              </DrawerTitle>
+            </div>
+            <button
+              className="text-gray-500 hover:text-gray-800"
+              onClick={() => setOpen(false)} // Close drawer
+              aria-label="Close drawer"
+            >
+              ✖️
+            </button>
           </DrawerHeader>
-          <DrawerFooter></DrawerFooter>
+          {isLoading ? (
+            <Loader className="flex mx-auto justify-center animate-spin" />
+          ) : (
+            <DrawerDescription className="whitespace-pre-wrap">
+              {wizardSuggestion && (
+                <div className="p-4 w-[90%] mx-auto border-4 border-gray-300 rounded-2xl shadow-lg  text-gray-500">
+                  <p>{wizardSuggestion}</p>
+                </div>
+              )}
+            </DrawerDescription>
+          )}
+          <div className="flex justify-center mt-4">
+            {wizardSuggestion && (
+              <button
+                className="flex items-center py-2 px-4 rounded-xl hover:opacity-80 border-2 border-gray-300"
+                onClick={handleCopyToClipboard}
+                aria-label="Copy to clipboard"
+              >
+                <span className="mr-2">Copy</span>
+                <Copy size={20} />
+              </button>
+            )}
+          </div>
+          <DrawerFooter />
         </DrawerContent>
       </Drawer>
     </div>
