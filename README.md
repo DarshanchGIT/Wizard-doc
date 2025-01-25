@@ -1,23 +1,17 @@
 # Wizard-Doc
 
-A powerful and user-friendly document creation app built with Next.js, featuring AI-enhanced capabilities for generating content, creating documents from templates, and managing your documents efficiently. This project also integrates modern design practices and secure authentication.
+Wizard-Doc is a feature-rich document creation app built with Next.js that empowers users to create documents from templates, leverage AI for content generation, and manage documents securely. It integrates customizable templates for streamlined workflows and ensures user privacy with secure authentication via Clerk. With responsive design styled using Tailwind CSS and ShadCN UI, Wizard-Doc offers a modern and intuitive experience for all users.
 
-## Features
+## **Demo**
 
-- **Create Documents**: Effortlessly create new documents from scratch or by using predefined templates.
-- **AI Integration**: Leverage AI to assist in generating content and enhancing your document creation process.
-- **Document Management**: Save, edit, and manage your documents securely.
-- **Template System**: Use customizable templates for a streamlined document creation experience.
-- **Authentication**: Secure authentication via Clerk, ensuring user privacy and document safety.
-- **Database**: Data is stored in a scalable PostgreSQL database, managed via Neon DB.
-- **ORM**: Prisma ORM is used to interact with the database, ensuring seamless and efficient data management.
-- **Responsive Design**: Styled with Tailwind CSS and ShadCN UI to provide a clean, modern, and responsive user experience.
+Check out the demo video of WORDVERSE in action:
 
-## Project Video
 
-[Watch the AI-Assisted Document Creator Demo](https://drive.google.com/file/d/1aq6khjo7w7nyIuWLbkQAOGvaILtiMCrt/view?usp=sharing)
+https://github.com/user-attachments/assets/9d40b654-34b1-41c9-a81e-9df963dbd81f
 
-## Tech Stack
+
+
+## **Tech Stack**
 
 - **Frontend**: [Next.js](https://nextjs.org) for the core framework
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) and [ShadCN UI](https://shadcn.dev) for modern and responsive design
@@ -26,7 +20,7 @@ A powerful and user-friendly document creation app built with Next.js, featuring
 - **Database**: [Neon DB](https://neon.tech) for scalable PostgreSQL hosting
 - **ORM**: [Prisma](https://www.prisma.io) for database schema management and interaction
 
-### Prerequisites
+## **Prerequisites**
 
 - Node.js 14.x or newer
 - PostgreSQL database (you can use Neon DB)
